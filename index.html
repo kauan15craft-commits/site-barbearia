@@ -1,92 +1,128 @@
-
 <!DOCTYPE html>
 <html lang="pt-BR">
 
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Barbearia do Kauan</title>
+    <meta name="theme-color" content="#11100e">
+    <meta name="description" content="Cortes modernos, barba e atendimento de qualidade na Barbearia do Kauan, em Guaxupé - MG.">
+    <title>Barbearia do Kauan | Seu estilo, no seu melhor</title>
     <link rel="stylesheet" href="style.css">
 </head>
 
 <body>
-<header class="cabecalho" id="inicio">
-    <h1>Barbearia do Kauan</h1>
-    <p>Bem-vindo à nossa barbearia!</p>
+    <header class="cabecalho" id="inicio">
+        <a class="marca" href="#inicio" aria-label="Barbearia do Kauan - início">
+            <span class="marca-icone" aria-hidden="true">BK</span>
+            <span>Barbearia <strong>do Kauan</strong></span>
+        </a>
 
-    <nav class="menu">
-        <a href="#inicio">Início</a>
-        <a href="#servicos">Serviços</a>
-        <a href="#contato">Contato</a>
-    </nav>
-</header>
-<section class="sobre">
-    <h2>Sobre Nós</h2>
+        <nav class="menu" aria-label="Navegação principal">
+            <a href="#inicio">Início</a>
+            <a href="#sobre">A barbearia</a>
+            <a href="#servicos">Serviços</a>
+            <a href="#contato">Contato</a>
+        </nav>
+    </header>
 
-    <img src="barbearia.png.png"
-         alt="Interior de uma barbearia"
-         class="imagem-barbearia">
+    <main>
+        <section class="hero" aria-labelledby="titulo-principal">
+            <div class="hero-conteudo">
+                <p class="sobretitulo">BARBEARIA EM GUAXUPÉ · MG</p>
+                <h1 id="titulo-principal">Seu estilo.<br><span>No seu melhor.</span></h1>
+                <p class="hero-descricao">Cuidado nos detalhes, atendimento de qualidade e um espaço feito para você.</p>
+                <a class="botao botao-destaque" href="https://wa.me/5535991510460" target="_blank" rel="noopener noreferrer">
+                    Agende seu horário <span aria-hidden="true">↗</span>
+                </a>
+            </div>
+            <div class="hero-imagem">
+                <img src="barbearia.png.png" alt="Interior acolhedor da Barbearia do Kauan">
+            </div>
+            <a class="hero-rolar" href="#sobre">Conheça a barbearia <span aria-hidden="true">↓</span></a>
+        </section>
 
-    <p>
-        Na Barbearia do Kauan, oferecemos cortes modernos,
-        atendimento de qualidade e um ambiente preparado
-        para você cuidar do seu estilo.
-    </p>
-</section>
-<h2 id="servicos">Nossos Servicos</h2>
+        <section class="sobre secao" id="sobre" aria-labelledby="titulo-sobre">
+            <div class="sobre-texto">
+                <p class="sobretitulo">TRADIÇÃO E ESTILO</p>
+                <h2 id="titulo-sobre">Um espaço para<br>cuidar de você.</h2>
+                <p>Na Barbearia do Kauan, oferecemos cortes modernos, atendimento de qualidade e um ambiente preparado para você cuidar do seu estilo.</p>
+            </div>
+            <div class="sobre-detalhe" aria-hidden="true">
+                <span>Seu próximo</span>
+                <strong>visual<br>começa aqui.</strong>
+                <span class="detalhe-linha"></span>
+            </div>
+        </section>
 
+        <section class="secao servicos-secao" id="servicos" aria-labelledby="titulo-servicos">
+            <div class="secao-cabecalho">
+                <div>
+                    <p class="sobretitulo">ESCOLHA O SEU</p>
+                    <h2 id="titulo-servicos">Serviços</h2>
+                </div>
+                <p>O cuidado certo para renovar o visual.</p>
+            </div>
+            <div class="servicos">
+                <article class="card">
+                    <span class="card-numero">01</span>
+                    <h3>Corte masculino</h3>
+                    <p>Um corte feito para combinar com seu estilo.</p>
+                    <div class="card-preco"><span>Preço</span><strong>R$ 35,00</strong></div>
+                </article>
+                <article class="card">
+                    <span class="card-numero">02</span>
+                    <h3>Barba</h3>
+                    <p>Acabamento caprichado para manter tudo no lugar.</p>
+                    <div class="card-preco"><span>Preço</span><strong>R$ 25,00</strong></div>
+                </article>
+                <article class="card card-destaque">
+                    <span class="card-numero">03</span>
+                    <h3>Corte + barba</h3>
+                    <p>O visual completo, com cuidado da cabeça ao rosto.</p>
+                    <div class="card-preco"><span>Preço</span><strong>R$ 50,00</strong></div>
+                </article>
+            </div>
+        </section>
 
-<div class="servicos">
+        <section class="informacoes secao" aria-label="Informações da barbearia">
+            <div class="info-card horarios" aria-labelledby="titulo-horarios">
+                <p class="sobretitulo">PLANEJE SUA VISITA</p>
+                <h2 id="titulo-horarios">Horários</h2>
+                <dl class="lista-horarios">
+                    <div><dt>Segunda a sexta</dt><dd>09h às 19h</dd></div>
+                    <div><dt>Sábado</dt><dd>09h às 17h</dd></div>
+                    <div><dt>Domingo</dt><dd>Fechado</dd></div>
+                </dl>
+            </div>
+            <div class="info-card localizacao" aria-labelledby="titulo-localizacao">
+                <p class="sobretitulo">ESTAMOS POR AQUI</p>
+                <h2 id="titulo-localizacao">Em Guaxupé</h2>
+                <p>Guaxupé - Minas Gerais</p>
+                <a class="botao botao-contorno" href="https://www.google.com/maps/search/?api=1&amp;query=Guaxup%C3%A9%2C+MG" target="_blank" rel="noopener noreferrer">
+                    Ver no Google Maps <span aria-hidden="true">↗</span>
+                </a>
+            </div>
+        </section>
 
-    <div class="card">
-        <h3>Corte Masculino</h3>
-        <p>R$ 35,00</p>
-    </div>
+        <section class="contato" id="contato" aria-labelledby="titulo-contato">
+            <p class="sobretitulo">VAMOS MARCAR?</p>
+            <h2 id="titulo-contato">Seu próximo corte<br>está a uma mensagem.</h2>
+            <p>Fale com a gente e agende seu horário pelo WhatsApp.</p>
+            <a class="botao botao-destaque" href="https://wa.me/5535991510460" target="_blank" rel="noopener noreferrer">
+                Agendar pelo WhatsApp <span aria-hidden="true">↗</span>
+            </a>
+        </section>
+    </main>
 
-    <div class="card">
-        <h3>Barba</h3>
-        <p>R$ 25,00</p>
-    </div>
-
-    <div class="card">
-        <h3>Corte + Barba</h3>
-        <p>R$ 50,00</p>
-    </div>
-
-</div>
-<section class="horarios">
-    <h2>Horários de Funcionamento</h2>
-
-    <p>Segunda a Sexta: 09h às 19h</p>
-    <p>Sábado: 09h às 17h</p>
-    <p>Domingo: Fechado</p>
-
-    </section>
-<section class="localizacao">
-    <h2>Onde Estamos</h2>
-    <p>Guaxupé - Minas Gerais</p>
-    <p>Venha conhecer nossa barbearia!</p>
-    <a class="botao-mapa"
-   href="https://www.google.com/maps/search/?api=1&query=Guaxup%C3%A9%2C+MG"
-   target="_blank"
-   rel="noopener noreferrer">
-    Ver no Google Maps
-</a>
-</section>
-<h2 id="contato">Agende seu horario</h2>
-
-<p>Entre em contato e marque seu corte!</p>
-
-<a class="botao-whatsapp"
-   href="https://wa.me/5535991510460"
-   target="_blank"
-   rel="noopener noreferrer">
-    Agendar pelo WhatsApp
-</a>
-<footer class="rodape">
-    <p>Barbearia do Kauan</p>
-    <p>Guaxupé - MG</p>
-    <p>&copy; 2026 Barbearia do Kauan. Todos os direitos reservados.</p>
-</footer>
+    <footer class="rodape">
+        <a class="marca marca-rodape" href="#inicio">
+            <span class="marca-icone" aria-hidden="true">BK</span>
+            <span>Barbearia <strong>do Kauan</strong></span>
+        </a>
+        <p>Guaxupé - MG</p>
+        <p>&copy; <span id="ano-atual">2026</span> Barbearia do Kauan. Todos os direitos reservados.</p>
+    </footer>
+    <script src="script.js"></script>
 </body>
+
 </html>
