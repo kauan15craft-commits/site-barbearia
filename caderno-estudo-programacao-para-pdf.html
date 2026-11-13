@@ -1,0 +1,281 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <title>Caderno de estudo - Programação da Barbearia</title>
+    <style>
+        @page { size: A4; margin: 16mm; }
+        * { box-sizing: border-box; }
+        body {
+            margin: 0;
+            color: #24231f;
+            font: 11pt/1.48 Arial, sans-serif;
+        }
+        .page { page-break-after: always; }
+        .page:last-child { page-break-after: auto; }
+        h1, h2, h3 { color: #183c36; line-height: 1.2; }
+        h1 { font-size: 30pt; margin: 12mm 0 5mm; }
+        h2 { font-size: 21pt; margin: 0 0 5mm; }
+        h3 { font-size: 13pt; margin: 6mm 0 2mm; }
+        p { margin: 2mm 0 3mm; }
+        ul, ol { margin: 2mm 0 4mm; padding-left: 7mm; }
+        li { margin: 1.5mm 0; }
+        .eyebrow {
+            color: #a26d37;
+            font-size: 9pt;
+            font-weight: bold;
+            letter-spacing: 1.5px;
+            text-transform: uppercase;
+        }
+        .subtitle { color: #54524c; font-size: 15pt; }
+        .note, .task, .example, .remember {
+            margin: 4mm 0;
+            padding: 4mm;
+            border-radius: 2mm;
+        }
+        .note { background: #f2f0e9; }
+        .task { background: #edf4ee; border-left: 3px solid #477451; }
+        .example { background: #f5f4f0; }
+        .remember { background: #fbf1e4; border-left: 3px solid #c5873d; }
+        code, pre {
+            font-family: Consolas, "Courier New", monospace;
+            font-size: 10pt;
+        }
+        code { color: #183c36; }
+        pre {
+            white-space: pre-wrap;
+            margin: 2mm 0;
+            padding: 3mm;
+            background: #f5f4f0;
+            border: 1px solid #e1dfd7;
+        }
+        .line {
+            height: 8mm;
+            border-bottom: 1px solid #b9b6ad;
+            margin: 1mm 0;
+        }
+        .short-line {
+            display: inline-block;
+            min-width: 35mm;
+            height: 6mm;
+            border-bottom: 1px solid #858178;
+        }
+        .small { color: #66635b; font-size: 9.5pt; }
+        .footer {
+            margin-top: 7mm;
+            color: #77736b;
+            font-size: 9pt;
+            border-top: 1px solid #dedbd2;
+            padding-top: 2mm;
+        }
+        .cover { padding-top: 17mm; }
+        .cover-box {
+            margin-top: 13mm;
+            padding: 8mm;
+            background: #edf2ed;
+            border-radius: 3mm;
+        }
+    </style>
+</head>
+<body>
+    <section class="page cover">
+        <p class="eyebrow">Caderno de estudo</p>
+        <h1>Aprendendo a programar<br>com o site da barbearia</h1>
+        <p class="subtitle">Um guia para entender, anotar e praticar no seu ritmo.</p>
+        <div class="cover-box">
+            <h3>Como usar este material</h3>
+            <ol>
+                <li>Leia uma parte pequena.</li>
+                <li>Escreva a ideia no caderno com suas palavras.</li>
+                <li>Abra o arquivo do site e encontre o trecho.</li>
+                <li>Faça o exercício, salve e veja o resultado no navegador.</li>
+            </ol>
+            <p><strong>Objetivo:</strong> aprender a fazer mudanças pequenas entendendo o que cada uma faz, em vez de copiar um site pronto.</p>
+        </div>
+        <h3>Seu plano de estudo</h3>
+        <p>Vou estudar em dias: <span class="short-line"></span> &nbsp; Por cerca de: <span class="short-line"></span></p>
+        <p>Uma coisa que quero conseguir fazer sozinho:</p>
+        <div class="line"></div>
+        <div class="line"></div>
+        <div class="footer">Material ligado aos arquivos do projeto Barbearia do Kauan. Comece sem pressa; errar e corrigir faz parte.</div>
+    </section>
+
+    <section class="page">
+        <p class="eyebrow">Lição 1</p>
+        <h2>Os arquivos trabalham em equipe</h2>
+        <p>Um site costuma separar o conteúdo, a aparência e as ações. No projeto da barbearia, cada arquivo tem um papel:</p>
+        <ul>
+            <li><code>index.html</code> organiza o conteúdo da página: títulos, textos, imagens, links e formulário.</li>
+            <li><code>style.css</code> cuida da aparência: cores, tamanhos, espaços e como o site se adapta à tela.</li>
+            <li><code>script.js</code> cuida das ações: carrega horários, lê o formulário e envia o pedido.</li>
+            <li><code>supabase-config.js</code> conecta o site ao projeto Supabase. Não compartilhe esse arquivo sem antes entender o que ele contém.</li>
+            <li><code>admin.html</code> e <code>admin.js</code> formam a página e as ações da área do barbeiro.</li>
+        </ul>
+        <div class="remember"><strong>Uma comparação:</strong> HTML é a estrutura da loja; CSS é a decoração; JavaScript é o que acontece quando alguém aperta um botão.</div>
+        <h3>Palavras básicas do HTML</h3>
+        <ul>
+            <li><strong>Tag:</strong> marca o começo ou o tipo de um elemento, como <code>&lt;p&gt;</code>.</li>
+            <li><strong>Elemento:</strong> a tag junto com o conteúdo. Exemplo: <code>&lt;p&gt;Olá&lt;/p&gt;</code>.</li>
+            <li><strong>Atributo:</strong> uma informação dentro da tag, como <code>id="agendar"</code>.</li>
+            <li><strong>Valor:</strong> o conteúdo associado ao atributo; em <code>id="agendar"</code>, o valor é <code>agendar</code>.</li>
+        </ul>
+        <div class="example">
+            <pre>&lt;p class="sobretitulo"&gt;ESCOLHA O SEU&lt;/p&gt;</pre>
+            <p><code>&lt;p&gt;</code> cria um parágrafo. <code>class</code> dá a ele um nome de grupo que o CSS pode usar para aplicar estilo.</p>
+        </div>
+        <div class="task">
+            <strong>Pratique no projeto:</strong> abra <code>index.html</code>. Encontre um título <code>&lt;h1&gt;</code> e um parágrafo <code>&lt;p&gt;</code>.
+            <p>O texto do título é: <span class="short-line"></span></p>
+            <p>O parágrafo que encontrei diz: <span class="short-line"></span></p>
+        </div>
+        <h3>Explique com suas palavras</h3>
+        <p>Qual é a diferença entre HTML, CSS e JavaScript?</p>
+        <div class="line"></div>
+        <div class="line"></div>
+        <div class="footer">Lição 1 · Entender o papel de cada arquivo ajuda a saber onde procurar.</div>
+    </section>
+
+    <section class="page">
+        <p class="eyebrow">Lição 2</p>
+        <h2>Links, IDs e seções</h2>
+        <p>Um link pode abrir outra página ou levar a uma parte da página atual. No menu do site, este link leva ao formulário:</p>
+        <pre>&lt;a href="#agendar"&gt;Agendar&lt;/a&gt;</pre>
+        <p>O símbolo <code>#</code> indica que o destino é uma seção dentro da mesma página. O destino precisa ter o mesmo ID:</p>
+        <pre>&lt;section id="agendar"&gt;
+    ...
+&lt;/section&gt;</pre>
+        <div class="remember"><strong>Regra para lembrar:</strong> o valor depois de <code>#</code> no link precisa combinar com o valor de <code>id</code> no destino. Não escreva o <code>#</code> dentro do valor de <code>id</code>.</div>
+        <h3><code>id</code> e <code>class</code> não são iguais</h3>
+        <ul>
+            <li><code>id</code> identifica um elemento específico. Exemplo: <code>id="agendar"</code>.</li>
+            <li><code>class</code> pode ser compartilhada por vários elementos. Exemplo: vários cartões usam <code>class="card"</code>.</li>
+            <li>No CSS, uma classe costuma ser escrita com ponto: <code>.card</code>. Um ID costuma ser escrito com cerquilha: <code>#agendar</code>.</li>
+        </ul>
+        <div class="task">
+            <strong>Exercício:</strong> complete os espaços para criar um link até a seção de serviços. Procure no <code>index.html</code> qual ID essa seção já usa.
+            <pre>&lt;a href="#________"&gt;Ver os serviços&lt;/a&gt;
+...
+&lt;section id="________"&gt;</pre>
+            <p>Por que os dois espaços devem ter o mesmo valor?</p>
+            <div class="line"></div>
+        </div>
+        <h3>Faça uma mudança pequena</h3>
+        <ol>
+            <li>Troque o texto de um link do menu, sem mexer no endereço dele.</li>
+            <li>Salve o arquivo.</li>
+            <li>Atualize a página no navegador e veja o que mudou.</li>
+        </ol>
+        <p>O que mudou? <span class="short-line"></span></p>
+        <p>O link continuou levando ao mesmo lugar? <span class="short-line"></span></p>
+        <div class="footer">Lição 2 · Faça uma mudança por vez; assim fica fácil descobrir o que cada trecho faz.</div>
+    </section>
+
+    <section class="page">
+        <p class="eyebrow">Lição 3</p>
+        <h2>Como entender o formulário</h2>
+        <p>O formulário reúne os dados que a pessoa preenche. No site, ele pede nome, telefone, serviço, data e horário.</p>
+        <div class="example">
+            <pre>&lt;label class="campo"&gt;
+    &lt;span&gt;Seu nome&lt;/span&gt;
+    &lt;input id="nome-cliente" type="text" required&gt;
+&lt;/label&gt;</pre>
+            <ul>
+                <li><code>&lt;label&gt;</code> agrupa o rótulo e o campo.</li>
+                <li><code>&lt;span&gt;</code> mostra o texto “Seu nome”.</li>
+                <li><code>&lt;input&gt;</code> cria um campo para digitar.</li>
+                <li><code>type="text"</code> indica que o campo recebe texto.</li>
+                <li><code>required</code> pede que a pessoa preencha antes de enviar.</li>
+                <li><code>id="nome-cliente"</code> dá ao campo um nome que o JavaScript pode localizar.</li>
+            </ul>
+        </div>
+        <h3>Tipos de campo que aparecem no site</h3>
+        <ul>
+            <li><code>type="text"</code>: texto, como o nome.</li>
+            <li><code>type="tel"</code>: telefone.</li>
+            <li><code>type="date"</code>: data em um seletor de calendário.</li>
+            <li><code>&lt;select&gt;</code>: menu de opções, usado para serviço e horário.</li>
+        </ul>
+        <div class="remember"><strong>Conexão importante:</strong> se o HTML tem <code>id="nome-cliente"</code>, o JavaScript procura esse mesmo ID. Se os nomes não combinarem, o programa pode não encontrar o campo.</div>
+        <div class="task">
+            <strong>Caça ao código:</strong> no <code>index.html</code>, escreva o ID que encontrar para cada dado.
+            <p>Nome: <span class="short-line"></span> &nbsp; Telefone: <span class="short-line"></span></p>
+            <p>Serviço: <span class="short-line"></span> &nbsp; Data: <span class="short-line"></span></p>
+            <p>Horário: <span class="short-line"></span></p>
+        </div>
+        <h3>Desenhe o caminho do pedido</h3>
+        <p>Complete com as suas palavras:</p>
+        <p>1. A pessoa preenche <span class="short-line"></span>.</p>
+        <p>2. O JavaScript lê os campos e <span class="short-line"></span>.</p>
+        <p>3. O pedido é enviado ao <span class="short-line"></span> e fica pendente de confirmação.</p>
+        <div class="footer">Lição 3 · Um campo na tela só vira parte do pedido porque o JavaScript o lê.</div>
+    </section>
+
+    <section class="page">
+        <p class="eyebrow">Lição 4</p>
+        <h2>CSS e JavaScript</h2>
+        <h3>CSS: aparência</h3>
+        <p>O CSS seleciona elementos e define como eles aparecem. A classe <code>botao</code>, por exemplo, pode controlar a forma e o espaçamento dos botões.</p>
+        <pre>.botao {
+    padding: 12px;
+    border-radius: 8px;
+}</pre>
+        <p>O ponto em <code>.botao</code> significa que o seletor está procurando uma <code>class="botao"</code> no HTML. Os valores dentro das chaves definem estilos.</p>
+        <div class="task">
+            <strong>Exercício:</strong> encontre no <code>style.css</code> uma classe que também aparece no <code>index.html</code>.
+            <p>Classe: <span class="short-line"></span> &nbsp; Ela muda: <span class="short-line"></span></p>
+        </div>
+        <h3>JavaScript: ações</h3>
+        <p>O JavaScript consegue encontrar um elemento pelo ID e reagir a um evento, como o envio do formulário.</p>
+        <pre>document.querySelector("#nome-cliente")</pre>
+        <p><code>document</code> representa a página. <code>querySelector</code> procura um elemento. O <code>#</code> indica que está procurando um ID.</p>
+        <p>No arquivo <code>script.js</code>, o envio do formulário segue esta ideia:</p>
+        <ol>
+            <li>Escuta o evento de envio do formulário.</li>
+            <li>Impede o recarregamento normal da página.</li>
+            <li>Lê os campos preenchidos.</li>
+            <li>Envia um pedido ao Supabase.</li>
+            <li>Mostra uma mensagem de sucesso ou de erro.</li>
+        </ol>
+        <p><strong>Supabase</strong> é o serviço online que guarda os pedidos e permite que a área do barbeiro consulte a agenda.</p>
+        <div class="remember"><strong>Ao testar:</strong> use um pedido fictício e avise o barbeiro antes de fazer testes que possam aparecer na agenda real.</div>
+        <div class="footer">Lição 4 · Quando algo muda de aparência, procure no CSS. Quando uma ação acontece, procure no JavaScript.</div>
+    </section>
+
+    <section class="page">
+        <p class="eyebrow">Prática final</p>
+        <h2>Agora você tenta</h2>
+        <p>Faça os exercícios no editor de código. Não precisa saber tudo de memória: use a busca do editor para encontrar IDs e classes.</p>
+        <div class="task">
+            <h3>Desafio 1 — mudar um texto</h3>
+            <p>Troque o texto de um parágrafo da apresentação. Salve e confira no navegador.</p>
+            <p>Arquivo em que mexi: <span class="short-line"></span></p>
+            <p>O que aconteceu: <span class="short-line"></span></p>
+        </div>
+        <div class="task">
+            <h3>Desafio 2 — mudar uma aparência</h3>
+            <p>Encontre no CSS a classe de um cartão de serviço. Mude só um valor de cor. Anote o valor antigo antes, para poder voltar atrás.</p>
+            <p>Classe: <span class="short-line"></span> &nbsp; Valor antigo: <span class="short-line"></span></p>
+            <p>Valor novo: <span class="short-line"></span></p>
+        </div>
+        <div class="task">
+            <h3>Desafio 3 — investigar o formulário</h3>
+            <p>Encontre no HTML o campo de serviço. Depois procure o mesmo ID ou seletor no JavaScript. O que o código faz com esse valor?</p>
+            <div class="line"></div>
+            <div class="line"></div>
+        </div>
+        <h3>Quando aparecer um erro</h3>
+        <ol>
+            <li>Leia a mensagem com calma.</li>
+            <li>Confira se salvou o arquivo certo.</li>
+            <li>Veja se escreveu corretamente as aspas, parênteses e nomes de IDs.</li>
+            <li>Desfaça só a última mudança se não souber o que causou o erro.</li>
+            <li>Peça ajuda mostrando a mensagem de erro e o trecho relacionado.</li>
+        </ol>
+        <h3>O que aprendi hoje?</h3>
+        <div class="line"></div>
+        <div class="line"></div>
+        <p>Uma dúvida para estudar depois: <span class="short-line"></span></p>
+        <div class="footer">Próximo passo: escolha um desafio e faça uma mudança pequena. Você programa; eu explico e ajudo a investigar.</div>
+    </section>
+</body>
+</html>

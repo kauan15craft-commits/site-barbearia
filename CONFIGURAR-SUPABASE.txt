@@ -1,0 +1,37 @@
+CONFIGURACAO DO AGENDAMENTO
+
+ESTADO ATUAL
+
+O projeto Supabase já está conectado ao site, o SQL foi executado e o convite
+de acesso do barbeiro foi enviado. O barbeiro ainda precisa aceitar o convite
+recebido por e-mail e criar a senha para entrar em admin.html.
+
+Para testar localmente, abra a pasta com o VS Code Live Server em
+http://127.0.0.1:5500. O Site URL do Supabase está configurado para essa origem.
+
+CONFIGURAR OUTRO PROJETO
+
+O site usa o Supabase para guardar pedidos online. Para conectar um projeto
+diferente, siga os passos abaixo. Não execute novamente o SQL no projeto atual.
+
+1. Crie um projeto no Supabase.
+2. No SQL Editor do projeto, abra e execute o arquivo supabase-setup.sql.
+3. Em Authentication > Users, crie o usuário do barbeiro com e-mail e senha.
+4. No SQL Editor, autorize esse usuário substituindo o e-mail no comando abaixo:
+
+   insert into public.barber_admins (user_id)
+   select id from auth.users where email = 'EMAIL_DO_BARBEIRO';
+
+   O comando deve inserir uma linha. Se não inserir, confira o e-mail e se o
+   usuário já foi criado.
+5. Em Authentication > Settings, desative novos cadastros públicos. O barbeiro
+   entra apenas em admin.html com o usuário criado no passo 3.
+6. Em Project Settings > API, copie a Project URL e a chave publicável (anon
+   key) e preencha os campos url e anonKey em supabase-config.js. Essa chave
+   pública pode ficar no site; nunca use a service_role key nesse arquivo.
+7. Publique o site em uma hospedagem com HTTPS. A página admin.html é a área
+   privada do barbeiro. Os pedidos ficam pendentes até serem confirmados ou
+   recusados nessa página.
+
+Os pedidos pendentes e confirmados reservam o horário. Quando um pedido é
+recusado, o horário volta a aparecer como disponível.

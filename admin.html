@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="theme-color" content="#11100e">
+    <meta name="robots" content="noindex, nofollow">
+    <title>Área do barbeiro | Barbearia do Kauan</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+    <header class="cabecalho">
+        <a class="marca" href="index.html">
+            <span class="marca-icone" aria-hidden="true">BK</span>
+            <span>Barbearia <strong>do Kauan</strong></span>
+        </a>
+        <a class="link-admin" href="index.html">Voltar ao site</a>
+    </header>
+
+    <main class="painel-admin">
+        <section class="painel-login" id="painel-login" aria-labelledby="titulo-login">
+            <p class="sobretitulo">ACESSO RESTRITO</p>
+            <h1 id="titulo-login">Área do barbeiro</h1>
+            <p>Entre para ver e gerenciar os pedidos de agendamento.</p>
+            <form class="agendamento-card" id="form-login">
+                <label class="campo">
+                    <span>E-mail</span>
+                    <input id="email-admin" type="email" autocomplete="username" required>
+                </label>
+                <label class="campo">
+                    <span>Senha</span>
+                    <input id="senha-admin" type="password" autocomplete="current-password" required>
+                </label>
+                <p class="agendamento-status" id="status-login" role="status" aria-live="polite"></p>
+                <button class="botao botao-destaque" type="submit">Entrar</button>
+            </form>
+        </section>
+
+        <section class="painel-login" id="painel-definir-senha" hidden aria-labelledby="titulo-definir-senha">
+            <p class="sobretitulo">PRIMEIRO ACESSO</p>
+            <h1 id="titulo-definir-senha">Crie sua senha</h1>
+            <p>Defina uma senha para acessar sua agenda nas próximas visitas.</p>
+            <form class="agendamento-card" id="form-definir-senha">
+                <label class="campo">
+                    <span>Nova senha</span>
+                    <input id="senha-nova" type="password" autocomplete="new-password" minlength="8" required>
+                </label>
+                <label class="campo">
+                    <span>Confirme a senha</span>
+                    <input id="senha-confirmacao" type="password" autocomplete="new-password" minlength="8" required>
+                </label>
+                <p class="agendamento-status" id="status-definir-senha" role="status" aria-live="polite"></p>
+                <button class="botao botao-destaque" type="submit">Salvar senha</button>
+            </form>
+        </section>
+
+        <section class="painel-conteudo" id="painel-conteudo" hidden aria-labelledby="titulo-painel">
+            <div class="painel-cabecalho">
+                <div>
+                    <p class="sobretitulo">AGENDA DA BARBEARIA</p>
+                    <h1 id="titulo-painel">Pedidos de agendamento</h1>
+                </div>
+                <div class="painel-acoes">
+                    <button class="botao botao-contorno" id="botao-atualizar" type="button">Atualizar</button>
+                    <button class="botao botao-contorno" id="botao-sair" type="button">Sair</button>
+                </div>
+            </div>
+            <p class="agendamento-status" id="status-painel" role="status" aria-live="polite"></p>
+            <div class="agenda-lista" id="agenda-lista"></div>
+        </section>
+    </main>
+
+    <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+    <script src="supabase-config.js"></script>
+    <script type="module" src="admin.js"></script>
+</body>
+
+</html>

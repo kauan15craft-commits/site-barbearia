@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+ <!DOCTYPE html>
 <html lang="pt-BR">
 
 <head>
@@ -21,6 +21,7 @@
             <a href="#inicio">Início</a>
             <a href="#sobre">A barbearia</a>
             <a href="#servicos">Serviços</a>
+            <a href="#agendar">Agendar</a>
             <a href="#contato">Contato</a>
         </nav>
     </header>
@@ -31,8 +32,8 @@
                 <p class="sobretitulo">BARBEARIA EM GUAXUPÉ · MG</p>
                 <h1 id="titulo-principal">Seu estilo.<br><span>No seu melhor.</span></h1>
                 <p class="hero-descricao">Cuidado nos detalhes, atendimento de qualidade e um espaço feito para você.</p>
-                <a class="botao botao-destaque" href="https://wa.me/5535991510460" target="_blank" rel="noopener noreferrer">
-                    Agende seu horário <span aria-hidden="true">↗</span>
+                <a class="botao botao-destaque" href="#agendar">
+                    Agende seu horário <span aria-hidden="true">↓</span>
                 </a>
             </div>
             <div class="hero-imagem">
@@ -84,6 +85,46 @@
             </div>
         </section>
 
+        <section class="agendamento secao" id="agendar" aria-labelledby="titulo-agendar">
+            <div class="agendamento-info">
+                <p class="sobretitulo">AGENDAR É FÁCIL</p>
+                <h2 id="titulo-agendar">Escolha o serviço e o horário ideal.</h2>
+                <p>Escolha o serviço, a data e o horário. O pedido fica pendente até o barbeiro confirmar. Os horários ocupados não aparecem para novos agendamentos.</p>
+            </div>
+            <form class="agendamento-card" id="form-agendamento">
+                <label class="campo">
+                    <span>Seu nome</span>
+                    <input id="nome-cliente" name="nome" type="text" autocomplete="name" maxlength="100" required>
+                </label>
+                <label class="campo">
+                    <span>Seu telefone</span>
+                    <input id="telefone-cliente" name="telefone" type="tel" autocomplete="tel" maxlength="20" required>
+                </label>
+                <label class="campo">
+                    <span>Serviço</span>
+                    <select id="servico" name="servico">
+                        <option value="Corte masculino">Corte masculino — R$ 35,00</option>
+                        <option value="Barba">Barba — R$ 25,00</option>
+                        <option value="Corte + barba">Corte + barba — R$ 50,00</option>
+                    </select>
+                </label>
+
+                <div class="campo-duplo">
+                    <label class="campo">
+                        <span>Data</span>
+                        <input id="data" name="data" type="date" required>
+                    </label>
+                    <label class="campo">
+                        <span>Horário</span>
+                        <select id="horario" name="horario" required></select>
+                    </label>
+                </div>
+
+                <p class="agendamento-status" id="status-agendamento" role="status" aria-live="polite"></p>
+                <button class="botao botao-destaque" type="submit">Solicitar agendamento</button>
+            </form>
+        </section>
+
         <section class="informacoes secao" aria-label="Informações da barbearia">
             <div class="info-card horarios" aria-labelledby="titulo-horarios">
                 <p class="sobretitulo">PLANEJE SUA VISITA</p>
@@ -104,15 +145,41 @@
             </div>
         </section>
 
+        <section class="galeria secao" id="galeria" aria-labelledby="titulo-galeria">
+            <div class="secao-cabecalho">
+                <div>
+                    <p class="sobretitulo">VISUAL DO NOSSO TRABALHO</p>
+                    <h2 id="titulo-galeria">Estilos que fazem a diferença</h2>
+                </div>
+                <p>Detalhes que elevam o visual e a confiança.</p>
+            </div>
+            <div class="galeria-grid" aria-label="Galeria de fotos e estilos">
+                <figure class="foto foto-grande">
+                    <img src="barbearia.png.png" alt="Ambiente da barbearia e um cliente em um corte moderno">
+                    <figcaption>Estilo clássico</figcaption>
+                </figure>
+                <figure class="foto foto-media">
+                    <div class="foto-sombra sombra-1"></div>
+                    <figcaption>Cortes modernos</figcaption>
+                </figure>
+                <figure class="foto foto-media">
+                    <div class="foto-sombra sombra-2"></div>
+                    <figcaption>Barba impecável</figcaption>
+                </figure>
+            </div>
+        </section>
+
         <section class="contato" id="contato" aria-labelledby="titulo-contato">
             <p class="sobretitulo">VAMOS MARCAR?</p>
-            <h2 id="titulo-contato">Seu próximo corte<br>está a uma mensagem.</h2>
-            <p>Fale com a gente e agende seu horário pelo WhatsApp.</p>
-            <a class="botao botao-destaque" href="https://wa.me/5535991510460" target="_blank" rel="noopener noreferrer">
-                Agendar pelo WhatsApp <span aria-hidden="true">↗</span>
+            <h2 id="titulo-contato">Seu próximo corte<br>começa por aqui.</h2>
+            <p>Peça seu horário pelo formulário e acompanhe a confirmação do barbeiro.</p>
+            <a class="botao botao-destaque" href="#agendar">
+                Escolher meu horário <span aria-hidden="true">↑</span>
             </a>
         </section>
     </main>
+
+    <a class="whatsapp-fixo" href="https://wa.me/5535991510460" target="_blank" rel="noopener noreferrer" aria-label="Falar com a Barbearia do Kauan pelo WhatsApp">WhatsApp</a>
 
     <footer class="rodape">
         <a class="marca marca-rodape" href="#inicio">
@@ -121,7 +188,10 @@
         </a>
         <p>Guaxupé - MG</p>
         <p>&copy; <span id="ano-atual">2026</span> Barbearia do Kauan. Todos os direitos reservados.</p>
+        <a class="link-admin" href="admin.html">Área do barbeiro</a>
     </footer>
+    <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+    <script src="supabase-config.js"></script>
     <script src="script.js"></script>
 </body>
 
